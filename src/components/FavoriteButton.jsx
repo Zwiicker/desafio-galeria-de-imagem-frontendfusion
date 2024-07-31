@@ -4,27 +4,28 @@ import { addFavorite, removeFavorite } from '../features/images/imageSlice';
 
 // Componente do botão de favoritos
 const FavoriteButton = ({ image }) => {
-  const dispatch = useDispatch(); // Hook para obter a função dispatch do Redux
-  const favorites = useSelector(state => state.images.favorites); // Hook para acessar a lista de favoritos no estado Redux
-  const isFavorite = favorites.some(fav => fav.id === image.id); // Verifica se a imagem já está nos favoritos
+  const dispatch = useDispatch();
+  const favorites = useSelector(state => state.images.favorites);
+  const isFavorite = favorites.some(fav => fav.id === image.id);
 
-  // Função para lidar com o clique no botão
   const handleClick = () => {
     if (isFavorite) {
-      dispatch(removeFavorite(image)); // Remove a imagem dos favoritos se já estiver presente
+      dispatch(removeFavorite(image));
     } else {
-      dispatch(addFavorite(image)); // Adiciona a imagem aos favoritos se não estiver presente
+      dispatch(addFavorite(image));
     }
   };
 
   return (
     <button
       onClick={handleClick}
-      className={`p-2 rounded-full transition-colors duration-300 ${
-        isFavorite ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-600'
-      }`}
+      className={`p-4 rounded-full border-2 transition-all duration-300 ease-in-out ${
+        isFavorite ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-white border-yellow-600 shadow-lg' : 
+        'bg-gray-300 text-gray-700 border-gray-400 shadow-md'
+      } hover:shadow-xl hover:scale-105`}
+      style={{ fontSize: '1.5rem' }} // Tamanho do ícone
     >
-      {isFavorite ? '★' : '☆'} {/* Ícone de estrela cheia para favoritos e estrela vazia para não-favoritos */}
+      {isFavorite ? '★' : '☆'}
     </button>
   );
 };

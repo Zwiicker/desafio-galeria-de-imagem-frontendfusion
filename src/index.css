@@ -1,70 +1,7 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Estilos para links */
-a {
-  font-weight: 600; /* Torna o texto do link mais espesso */
-  color: #646cff; /* Define a cor do link */
-  text-decoration: inherit; /* Remove o sublinhado padrão */
-  padding-left: 1%; /* Adiciona espaço à esquerda do link */
-  margin-bottom: 5%; /* Adiciona margem inferior ao link */
-}
-a:hover {
-  color: #535bf2; /* Muda a cor do link quando o mouse passa sobre ele */
-}
-
-/* Estilos para o corpo da página */
-body {
-  display: center; /* Centraliza o conteúdo */
-  place-items: center; /* Alinha itens no centro */
-  width: 100%; /* Define a largura total do corpo */
-  margin: 0; /* Remove a margem padrão */
-  padding: 0; /* Remove o padding padrão */
-  text-align: center; /* Alinha o texto ao centro */
-}
-
-/* Estilos para o título principal */
-h1 {
-  font-size: 3.2em; /* Define o tamanho da fonte do título */
-  line-height: 1.1; /* Define a altura da linha para o título */
-}
-h3 {
-  text-align: center; /* Alinha o texto ao centro para os títulos h3 */
-}
-
-/* Estilos para botões */
-button {
-  border-radius: 8px; /* Define bordas arredondadas para o botão */
-  border: 1px solid transparent; /* Define uma borda transparente */
-  padding: 0.6em 1.2em; /* Adiciona padding interno ao botão */
-  font-size: 1em; /* Define o tamanho da fonte do botão */
-  font-weight: 500; /* Define o peso da fonte do botão */
-  font-family: inherit; /* Usa a fonte herdada */
-  background-color: #1a1a1a; /* Define a cor de fundo do botão */
-  cursor: pointer; /* Muda o cursor para uma mão ao passar sobre o botão */
-  transition: border-color 0.25s; /* Adiciona uma transição suave para a cor da borda */
-  margin-bottom: 5%; /* Adiciona margem inferior ao botão */
-}
-
-button:hover {
-  border-color: #646cff; /* Muda a cor da borda ao passar o mouse sobre o botão */
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color; /* Adiciona um contorno ao botão quando ele está focado */
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Estilos para o grid de imagens */
 .image-grid {
@@ -95,16 +32,3 @@ button:focus-visible {
   object-fit: cover; /* Garante que a imagem se ajuste ao tamanho definido sem distorção */
 }
 
-/* Estilos para o esquema de cores claro */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547; /* Define a cor do texto para o esquema de cores claro */
-    background-color: #ffffff; /* Define a cor de fundo para o esquema de cores claro */
-  }
-  a:hover {
-    color: #747bff; /* Muda a cor do link ao passar o mouse sobre ele no esquema de cores claro */
-  }
-  button {
-    background-color: #f9f9f9; /* Define a cor de fundo do botão para o esquema de cores claro */
-  }
-}

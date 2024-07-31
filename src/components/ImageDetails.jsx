@@ -14,25 +14,25 @@ const ImageDetails = () => {
   // Verifica se a imagem foi encontrada
   if (!image) {
     // Se a imagem não for encontrada, exibe uma mensagem de erro
-    return <div className="text-center text-gray-700">Image not found</div>;
+    return <div className="text-center text-gray-300">Image not found</div>;
   }
 
   return (
-    <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 ">
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto ">
+    <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 z-50">
+      <div className="bg-gray-900 bg-opacity-90 p-6 rounded-lg shadow-lg max-w-lg mx-auto relative">
         {/* Exibe o autor da imagem */}
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">{image.author}</h2>
+        <h2 className="text-3xl font-semibold text-gray-200 mb-4">{image.author}</h2>
         <img 
           src={image.download_url} 
           alt={image.author} 
-          className="w-96 h-96 object-cover custom-img-size rounded-lg mb-4 image-card" // Ajuste para o tamanho desejado
+          className="w-[500px] h-[400px] object-cover rounded-lg mb-4" 
         />
         {/* Exibe as dimensões da imagem */}
-        <p className="text-gray-700 mb-2">Width: {image.width}</p>
-        <p className="text-gray-700 mb-4">Height: {image.height}</p>
+        <p className="text-gray-400 mb-2">Width: {image.width}</p>
+        <p className="text-gray-400 mb-4">Height: {image.height}</p>
         {/* Botão para fechar a visualização e retornar à galeria */}
         <button 
-          className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300"
+          className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition-colors duration-300 absolute bottom-4 right-4"
           onClick={() => navigate('/')} // Navega de volta para a página inicial
         >
           Close

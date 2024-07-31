@@ -36,18 +36,18 @@ const ImageGallery = () => {
           placeholder="Filter by author..."
           value={authorFilter}
           onChange={handleFilterChange}
-          className="p-2 border border-gray-300 rounded w-full"
+          className="p-2 border border-gray-300 rounded-lg w-80 text-gray-900"
         />
       </div>
       {/* Exibe status de carregamento, erro ou as imagens filtradas */}
-      {status === 'loading' && <p>Loading...</p>}
-      {status === 'failed' && <p>{error}</p>}
+      {status === 'loading' && <p className="text-center text-gray-500">Loading...</p>}
+      {status === 'failed' && <p className="text-center text-red-500">{error}</p>}
       {status === 'succeeded' && (
-        <div className="image-grid gap-4 p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
           {filteredImages.length > 0 ? (
             filteredImages.map(image => <ImageCard key={image.id} image={image} />)
           ) : (
-            <p className="text-center text-gray-700">No images found</p>
+            <p className="text-center text-gray-500">No images found</p>
           )}
         </div>
       )}
